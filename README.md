@@ -1,6 +1,5 @@
 # Cardano Will DApp
 
-![Cardano Will DApp](assets/will-dapp.jpg)
 
 A decentralized application (DApp) on the Cardano blockchain for creating and claiming wills securely. Users can lock ADA for beneficiaries with optional partial claims and allow beneficiaries to claim their allocated ADA after a set unlock time.
 
