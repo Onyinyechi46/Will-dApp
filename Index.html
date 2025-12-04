@@ -1,106 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cardano Will DApp | Dashboard</title>
 
   <style>
     :root {
       --primary: #3b82f6;
       --primary-hover: #2563eb;
-      --bg: #f8fafc;
+      --bg: #f1f5f9;
       --card-bg: white;
       --border: #e2e8f0;
-      --radius: 14px;
-      --text-muted: #6b7280;
+      --radius: 16px;
+      --text-muted: #64748b;
+      --transition: 0.25s ease;
     }
 
     body {
       margin: 0;
       padding: 2rem;
-      font-family: Arial, sans-serif;
+      font-family: "Inter", Arial, sans-serif;
       background: var(--bg);
-      color: #111;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
+      color: #0f172a;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       width: 100%;
       text-align: center;
+      animation: fadeIn 0.6s var(--transition);
     }
 
     h1 {
-      margin-bottom: 2.5rem;
-      font-size: 2.4rem;
-      font-weight: bold;
+      margin-bottom: 2.2rem;
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
     }
 
     .dashboard {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       padding: 0 1rem;
     }
 
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      padding: 2rem;
+      padding: 2.2rem;
       border-radius: var(--radius);
-      cursor: pointer;
       text-align: left;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
       border-color: var(--primary);
     }
 
     .card h2 {
-      margin-top: 0;
-      margin-bottom: 0.7rem;
-      font-size: 1.6rem;
+      margin: 0 0 0.8rem;
+      font-size: 1.7rem;
+      font-weight: 700;
       color: var(--primary);
     }
 
     .card p {
       margin: 0;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.6;
+    }
+
+    /* Smooth fade animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
-
 </head>
 
 <body>
-
   <div class="container">
     <h1>Cardano Will DApp</h1>
 
     <div class="dashboard">
-
       <div class="card" onclick="window.location.href='create_will.html'">
         <h2>Create Will</h2>
-        <p>Set up a secure blockchain-based will for your beneficiaries.</p>
+        <p>Set up a secure, decentralized blockchain-based will for your beneficiaries.</p>
       </div>
 
       <div class="card" onclick="window.location.href='claim_will.html'">
         <h2>Claim Will</h2>
-        <p>Verify your identity and claim your allocated inheritance.</p>
+        <p>Verify your identity through blockchain and claim your allocated inheritance.</p>
       </div>
-
     </div>
-
   </div>
-
 </body>
 </html>
