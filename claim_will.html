@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claim Will | Cardano DApp</title>
 
   <style>
@@ -14,86 +14,86 @@
       --text-muted: #9ca3af;
       --primary: #3b82f6;
       --primary-hover: #1d4ed8;
-      --radius: 14px;
-      --glow: 0 0 12px rgba(59,130,246,0.45);
+      --radius: 16px;
+      --glow: 0 0 14px rgba(59, 130, 246, 0.45);
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Inter", Arial, sans-serif;
       background: var(--bg);
       margin: 0;
       padding: 2rem;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      color: var(--text);
+      align-items: center;
       min-height: 100vh;
+      color: var(--text);
     }
 
     .card {
       background: var(--card);
+      padding: 2.4rem;
       width: 100%;
-      max-width: 600px;
-      padding: 2rem;
+      max-width: 640px;
       border-radius: var(--radius);
-      box-shadow: 0 0 25px rgba(0,0,0,0.4);
       border: 1px solid var(--border);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.4s ease;
     }
 
     h1 {
       text-align: center;
-      font-size: 2rem;
       margin-top: 0;
-      color: var(--text);
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
     }
 
     label {
       display: block;
-      margin-top: 1.5rem;
-      font-weight: bold;
+      margin-top: 1.8rem;
       font-size: 1.05rem;
-      color: var(--text);
+      font-weight: 600;
     }
 
     input {
       width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.45rem;
+      padding: 0.85rem;
+      margin-top: 0.5rem;
       font-size: 1rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: #0f131a;
       color: var(--text);
-      transition: 0.2s;
+      transition: 0.25s;
     }
 
     input:focus {
       border-color: var(--primary);
-      background: #0a0d12;
+      background: #0b0f16;
       outline: none;
       box-shadow: var(--glow);
     }
 
     small {
       display: block;
-      margin-top: 0.3rem;
+      margin-top: 0.4rem;
       color: var(--text-muted);
       font-size: 0.85rem;
     }
 
     .btn {
       width: 100%;
-      padding: 0.9rem;
-      margin-top: 2rem;
-      font-size: 1.05rem;
+      padding: 1rem;
+      margin-top: 2.2rem;
+      font-size: 1.06rem;
+      font-weight: bold;
       border: none;
       border-radius: var(--radius);
       cursor: pointer;
       background: var(--primary);
       color: white;
-      font-weight: bold;
-      transition: 0.2s;
       box-shadow: var(--glow);
+      transition: 0.25s;
     }
 
     .btn:hover {
@@ -102,34 +102,34 @@
 
     .btn:disabled {
       background: #2f3848;
-      box-shadow: none;
       cursor: not-allowed;
+      box-shadow: none;
     }
 
     .back-btn {
-      margin-top: 1.6rem;
+      margin-top: 1.2rem;
       background: transparent;
       border: 2px solid var(--primary);
       color: var(--primary);
+      font-weight: 600;
       box-shadow: none;
     }
 
     .back-btn:hover {
       background: var(--primary);
-      color: white;
+      color: #fff;
     }
 
     #status {
-      margin-top: 1.5rem;
-      font-weight: bold;
+      margin-top: 1.6rem;
       text-align: center;
-      min-height: 1.2em;
-      color: var(--text);
+      font-weight: bold;
+      min-height: 1.2rem;
     }
 
-    /* Smooth animations */
-    .card, input, .btn {
-      transition: all 0.25s ease;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -139,16 +139,16 @@
     <h1>Claim Your Will</h1>
 
     <label for="beneficiaries">Your PubKeyHash:</label>
-    <input 
-      type="text" 
-      id="beneficiaries" 
+    <input
+      type="text"
+      id="beneficiaries"
       placeholder="Enter your PubKeyHash"
       autocomplete="off"
     />
     <small>This must match the registered beneficiary PubKeyHash.</small>
 
     <label for="claimAmount">Amount to Claim (ADA):</label>
-    <input 
+    <input
       type="number"
       id="claimAmount"
       placeholder="e.g., 500"
