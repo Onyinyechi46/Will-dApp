@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome | Cardano Will DApp</title>
-
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at top, #1d1f33, #0a0f1f 70%);
-      color: #f0f4f8;
+      background: linear-gradient(135deg, #101725, #0f2027, #203a43, #2c5364);
+      color: #eef6ff;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem;
     }
 
     header h1 {
-      font-size: 3.2rem;
-      color: #60a5fa;
-      text-shadow: 0 0 18px rgba(96,165,250,0.5);
+      font-size: 3.3rem;
+      color: #76c7ff;
       margin-bottom: 1.5rem;
-      animation: fadeInDown 1s ease forwards;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      animation: fadeDown 1s ease;
     }
 
     main h2 {
-      font-size: 1.9rem;
-      max-width: 600px;
-      color: #a5c2ff;
-      opacity: 0.9;
-      animation: fadeIn 1.2s ease forwards;
+      font-size: 1.6rem;
       margin-bottom: 2.5rem;
+      color: #b8e3ff;
+      opacity: 0.9;
+      animation: fadeUp 1.2s ease;
     }
 
     .button-group {
@@ -48,71 +46,60 @@
       gap: 2rem;
       flex-wrap: wrap;
       justify-content: center;
-      animation: fadeIn 1.6s ease forwards;
     }
 
     .btn-primary, .btn-secondary {
-      padding: 1rem 2.5rem;
-      border-radius: 12px;
+      padding: 1rem 2.3rem;
+      border-radius: 14px;
       text-decoration: none;
       font-weight: 600;
+      transition: all 0.35s ease;
       font-size: 1.15rem;
-      transition: 0.3s ease;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.45);
-      border: 1px solid transparent;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      background: linear-gradient(135deg, #3fa9f5, #0072ff);
       color: white;
-      border-color: #3b82f6;
     }
-
     .btn-primary:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(59,130,246,0.55);
+      transform: translateY(-5px) scale(1.05);
+      background: linear-gradient(135deg, #2e8ce0, #005ce0);
     }
 
     .btn-secondary {
-      background: linear-gradient(135deg, #10b981, #059669);
+      background: linear-gradient(135deg, #18e0a8, #0ca97c);
       color: white;
-      border-color: #10b981;
     }
-
     .btn-secondary:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(16,185,129,0.5);
+      transform: translateY(-5px) scale(1.05);
+      background: linear-gradient(135deg, #0ccf8e, #0a8d69);
     }
 
     footer {
       margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #9ca3af;
-      opacity: 0.75;
-      animation: fadeIn 2s ease;
+      color: #c0cad3;
+      font-size: 0.95rem;
+      opacity: 0.8;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-25px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive */
-    @media (max-width: 500px) {
+    @media(max-width: 500px) {
       header h1 { font-size: 2.4rem; }
-      main h2 { font-size: 1.4rem; }
+      main h2 { font-size: 1.25rem; }
       .button-group { flex-direction: column; gap: 1rem; }
       .btn-primary, .btn-secondary { width: 100%; }
     }
   </style>
 </head>
-
 <body>
 
   <header>
@@ -120,7 +107,7 @@
   </header>
 
   <main>
-    <h2>Securely manage your legacy with trustless blockchain technology</h2>
+    <h2>Securely manage your blockchain legacy</h2>
 
     <div class="button-group">
       <a href="create-will.html" class="btn-primary">Create Will</a>
@@ -129,7 +116,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Coxygen Global Will DApp. All Rights Reserved.
+    © 2025 Coxygen Global Will DApp. All Rights Reserved.
   </footer>
 
 </body>
