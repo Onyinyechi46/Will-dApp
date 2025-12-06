@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Will | Cardano Will DApp</title>
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,12 +15,14 @@
     :root {
       --primary: #2b7cff;
       --primary-hover: #1f6be0;
-      --bg: #f4f7fb;
+      --bg: #eef3f9;
       --card-bg: #ffffff;
-      --border: #d9e2ec;
+      --border: #d6e0eb;
       --text: #1a1a1a;
+      --text-muted: #767676;
       --radius: 14px;
       --transition: 0.25s ease;
+      --shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
     }
 
     body {
@@ -32,105 +37,148 @@
 
     .container {
       background: var(--card-bg);
-      padding: 2rem 2.4rem;
-      max-width: 700px;
+      padding: 2.6rem 2.8rem;
+      max-width: 720px;
       width: 100%;
       border-radius: var(--radius);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow);
       animation: fadeIn 0.6s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
-      margin: 0 0 1rem 0;
-      font-size: 2.1rem;
-      color: var(--text);
+      margin-bottom: 1.7rem;
+      font-size: 2.2rem;
       text-align: center;
       font-weight: 700;
+      background: linear-gradient(to right, #2b7cff, #60a3ff);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
+    /* Inputs & Textareas */
     label {
       display: block;
-      margin-top: 1.4rem;
+      margin-top: 1.6rem;
       font-weight: 600;
       font-size: 1.05rem;
-      color: #333;
     }
 
     input,
-    textarea,
-    button {
+    textarea {
       width: 100%;
-      padding: 0.85rem;
+      padding: 0.9rem;
       margin-top: 0.45rem;
+      font-size: 1rem;
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      font-size: 1rem;
-      box-sizing: border-box;
       transition: var(--transition);
+      background: #f9fbff;
+      box-sizing: border-box;
     }
 
     input:focus,
     textarea:focus {
       border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(43, 124, 255, 0.15);
       outline: none;
-      box-shadow: 0 0 0 3px rgba(43,124,255,0.15);
+      background: #ffffff;
     }
 
     textarea {
-      min-height: 110px;
       resize: vertical;
+      min-height: 120px;
     }
 
+    /* Buttons */
     button {
-      cursor: pointer;
-      background: var(--primary);
-      border: none;
-      color: white;
+      padding: 0.9rem;
       font-weight: 600;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
     }
 
-    button:hover:not(:disabled) {
+    #connect-btn,
+    #copyPubKeyBtn,
+    #createWillBtn {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    #connect-btn {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(43, 124, 255, 0.35);
+    }
+
+    #connect-btn:hover {
       background: var(--primary-hover);
     }
 
-    button:disabled {
+    #copyPubKeyBtn {
+      background: #eceff3;
+      color: #000;
+      border: 1px solid #d9dfe7;
+    }
+
+    #copyPubKeyBtn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    #createWillBtn {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(43, 124, 255, 0.28);
+      margin-top: 2rem;
+    }
+
+    #createWillBtn:hover:not(:disabled) {
+      background: var(--primary-hover);
+    }
+
+    #createWillBtn:disabled {
       background: #9bbcf0;
       cursor: not-allowed;
     }
 
-    .secondary-btn {
-      background: #eceff3;
-      color: #000;
-    }
-
-    .secondary-btn:hover {
-      background: #dde1e6;
-    }
-
+    /* Back / Next Buttons */
     .action-btn {
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
-      margin-top: 2.5rem;
+      gap: 1.2rem;
+      margin-top: 2.4rem;
     }
 
-    #status {
-      margin-top: 1.5rem;
+    .secondary-btn {
+      flex: 1;
+      background: #e3e7ec;
+      border: 1px solid #cbd4df;
+      color: #222;
       font-weight: 600;
-      color: #444;
-      min-height: 1.2rem;
-      background: #f1f4f8;
-      border-radius: var(--radius);
-      padding: 0.8rem 1rem;
     }
 
+    .secondary-btn:hover {
+      background: #dbe0e7;
+    }
+
+    /* Checkbox */
     .checkbox-row {
-      margin-top: 1.2rem;
+      margin-top: 1.3rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -138,9 +186,31 @@
 
     .checkbox-row input {
       width: auto;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    /* Status box */
+    #status {
+      margin-top: 1.7rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      min-height: 1.2rem;
+      background: #f1f4f8;
+      border-radius: var(--radius);
+      padding: 0.85rem 1rem;
+      border: 1px solid #e3e9ef;
+    }
+
+    /* Responsive */
+    @media (max-width: 520px) {
+      .container {
+        padding: 1.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Create Will</h1>
@@ -156,7 +226,9 @@
 
     <div class="checkbox-row">
       <input type="checkbox" id="partialClaim" />
-      <label for="partialClaim" style="margin: 0; font-weight: 500;">Allow Partial Claim</label>
+      <label for="partialClaim" style="margin: 0; font-weight: 500;">
+        Allow Partial Claim
+      </label>
     </div>
 
     <button id="createWillBtn" disabled>Create Will (Lock ADA)</button>
@@ -171,4 +243,5 @@
     <script type="module" src="will.js"></script>
   </div>
 </body>
+
 </html>
